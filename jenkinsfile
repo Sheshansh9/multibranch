@@ -1,0 +1,8 @@
+pipeline{
+  agent any
+  stages{
+   stage("dev deploy"){
+    echo "deploy to xyz"
+   }
+  }
+}  
