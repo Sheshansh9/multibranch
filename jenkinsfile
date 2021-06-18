@@ -2,9 +2,15 @@ pipeline{
   agent any
   stages{
    stage("dev deploy"){
-    steps{
-    echo "deploy to xyz"
+    when{
+    branch "dev"
+    }
+     steps{
+     echo "deploy to xyz"
    }
   }
-}  
+   stage('uat deploy'){
+   when{
+    branch "uat"
+   }  
 }
