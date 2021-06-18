@@ -1,7 +1,7 @@
 pipeline{
   agent any
   stages{
-   stage("dev deploy"){
+   stage('dev deploy'){
     when{
     branch "dev"
     }
@@ -12,5 +12,18 @@ pipeline{
    stage('uat deploy'){
    when{
     branch "uat"
-   }  
+    }
+    steps{
+    echo "deploy to uat enviornment"
+    }
+   }
+   stage('prd deploy'){
+   when{
+   branch "main"
+  }
+  steps{
+  echo" deploy to prd enviornment"
+   }
+  }
+ }  
 }
